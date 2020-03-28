@@ -200,26 +200,32 @@ def flip_player():
 
 # Check if to continue playing
 def check_for_play():
+
     # Global variables
     global game_still_going
     global winner
     global current_player
 
+    # Check with user to start a new game or quit
     play_again = input("Do you want to play again? (Y / N)")
 
+    # If user wants a restart
     if play_again.lower() == 'y':
         print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
         print("New game:")
 
+        # Reset global variables to starting values
         continue_playing = True
         game_still_going = True
         winner = None
         current_player = "X"
 
+        # Reset board to blank
         for x in range(0, 9):
             board[x] = "-"
         return continue_playing
 
+    # If restart is not required
     elif play_again.lower() == 'n':
         continue_playing = False
         return continue_playing
